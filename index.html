@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiomich</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wallpaper"></div>
+    
+    <div class="floating-particles" id="particles"></div>
+
+    <div class="date-time">
+        <h1 id="weekday">WEDNESDAY</h1>
+        <div class="time" id="time">02:10 AM</div>
+    </div>
+    </div>
+
+    <!-- GitHub Window -->
+<div class="app-window github-window" id="github-window">
+    <div class="window-header">
+        <div class="window-title">GitHub</div>
+        <div class="close-btn" onclick="closeApp('github-window')">✕</div>
+    </div>
+    <div class="window-content">
+    </div>
+</div>
+
+<!-- Steam Window -->
+<div class="app-window steam-window" id="steam-window">
+    <div class="window-header">
+        <div class="window-title"> Steam</div>
+        <div class="close-btn" onclick="closeApp('steam-window')">✕</div>
+    </div>
+    <div class="window-content">
+    </div>
+</div>
+
+<!-- sound Window -->
+<div class="app-window soundcloud-window" id="soundcloud-window">
+    <div class="window-header">
+        <div class="window-title">SoundCloud</div>
+        <div class="close-btn" onclick="closeApp('soundcloud-window')">✕</div>
+    </div>
+    <div class="window-content">
+        </div>
+    </div>
+</div>
+
+<!-- telegram Window -->
+<div class="app-window telegram-window" id="telegram-window">
+    <div class="window-header">
+        <div class="window-title">Telegram</div>
+        <div class="close-btn" onclick="closeApp('telegram-window')">✕</div>
+    </div>
+    <div class="window-content qwu8e1y">
+            <div class="d8t4y6r">
+        <div class="p5u1i3e c1" title="#758f6f"></div>
+        <div class="p5u1i3e c2" title="#756059"></div>
+        <div class="p5u1i3e c3" title="#a69e87"></div>
+        <div class="p5u1i3e c4" title="#796257"></div>
+        <div class="p5u1i3e c5" title="#a69f7c"></div>
+        <div class="p5u1i3e c6" title="#745f57"></div>    </div>
+
+            <div class="x7k2m9p">
+        <div class="v3n8r5t">
+            <div class="h9j4w2q">
+                <img class="pfp" src="https://github.com/kiomich/kiomichdekstop.github.io/blob/main/img/photo_2025-06-26_04-19-47.jpg?raw=true" alt="">
+            </div>
+        </div>
+        
+        <div class="b6z3l8m">
+            увековечено в камне
+        </div>
+        
+        <button class="f2k9s7n" onclick="handleButtonClick()">
+            Action Button
+        </button>
+        
+        <div class="w7n2k5s">
+            <div class="a4r8o1z">
+                i use nyarch btw
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+    <div class="terminal" id="terminal">
+        <div class="terminal-header ">
+            <span class="kittyt" >kitty terminal</span>
+            <span onclick="closeTerminal()" style="cursor: pointer;">✕</span>
+        </div>
+        <div class="terminal-content">
+            <div><span id="prompt">>[linux@diskiomixj ~]$ </span><span class="cursor">_</span></div>
+        </div>
+    </div>
+
+<div class="taskbar">
+        <div class="settings-menu" id="settings-menu">
+         <div>
+        <!-- Header -->
+        <div class="header">
+            <div class="user-greeting">Hello</div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="battery">
+                    <span>my friend</span>
+                    <div class="battery-icon">
+                    </div>
+                </div>
+                <div class="power-icon"></div>
+            </div>
+        </div>
+
+        <div class="control-item">
+            <div class="control-icon settings-icon">⚙️</div>
+            <div class="control-text">
+                <div class="control-title">exit</div>
+                <div class="control-subtitle">system</div>
+            </div>
+        </div>
+
+        <!-- Weather -->
+        <div class="weather-section">
+            <div class="weather-icon">🌤️</div>
+            <div class="weather-temp">
+                <div class="weather-main">20° 13.4°</div>
+                <div class="weather-sub">10° ❄️ 2%</div>
+            </div>
+            <div class="weather-status">
+                <div class="weather-condition">Cloudy</div>
+                <div class="weather-location">Хельсинки</div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="taskbar-icons">
+            <div class="taskbar-icon" onclick="openApp('github-window')"><img class="github" src="https://github.com/kiomich/kiomichdekstop.github.io/blob/main/img/pngegg.png?raw=true" alt=""></div>
+            <div class="taskbar-icon" onclick="openApp('steam-window')"><img class="steam" src="https://github.com/kiomich/kiomichdekstop.github.io/blob/main/img/pngegg(5).png?raw=true" alt=""></div>
+            <div class="taskbar-icon" onclick="openApp('soundcloud-window')"><img class="soundcloud" src="https://github.com/kiomich/kiomichdekstop.github.io/blob/main/img/pngegg(4).png?raw=true" alt=""></div>
+            <div class="taskbar-icon" onclick="openApp('telegram-window')"><img class="telegram" src="https://github.com/kiomich/kiomichdekstop.github.io/blob/main/img/pngegg(2).png?raw=true" alt=""></div>
+            <div class="taskbar-icon" onclick="openApp('terminal')"><img class="kitty" src="https://github.com/kiomich/kiomichdekstop.github.io/blob/main/img/551122aac2880482f9e7c0824cd219524cdef7c5_2_690x345.png?raw=true" alt=""></div>
+        </div>
+        <div class="taskbar-time" id="taskbar-time">Wed 02:10</div> 
+        <div class="taskbar-icon pysk" onclick="toggleSettings()">⚙️</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
