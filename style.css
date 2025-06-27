@@ -1,0 +1,508 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            position: relative;
+        }
+
+        .wallpaper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images3.alphacoders.com/135/thumb-1920-1354394.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .date-time {
+            position: absolute;
+            top: 390px;
+            left: 350px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .date-time h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); }
+            to { text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 30px rgba(255,255,255,0.6); }
+        }
+
+        .date-time .time {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-left: 43%;
+        }
+
+        .taskbar {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+        }
+
+        .taskbar-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .taskbar-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .taskbar-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .taskbar-time {
+            margin-left: 30px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .pysk {
+            margin-left: 30px;
+        }
+
+        /* App Windows */
+        .app-window {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .app-window.active {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .window-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .window-title {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 0, 0, 0.3);
+        }
+
+        .window-content {
+            padding: 20px;
+        }
+
+        /* Steam Window Specific Styles */
+        .steam-window { 
+            top: 50px; 
+            left: 100px; 
+            width: 800px; 
+            height: 600px; 
+        }
+
+        .steam-window .window-content {
+            padding: 0;
+            height: calc(100% - 50px);
+        }
+
+        .steam-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Other window styles */
+        .github-window { 
+            top: 100px; 
+            left: 200px; 
+            width: 400px; 
+            height: 300px; 
+        }
+
+        .soundcloud-window { 
+            top: 120px; 
+            left: 300px; 
+            width: 450px; 
+            height: 350px; 
+        }
+
+        /* Telegram Window Specific Styles */
+        .telegram-window { 
+            top: 80px; 
+            right: 200px; 
+            width: 350px; 
+            height: 450px; 
+        }
+
+        .telegram-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+        }
+
+        .color-palette {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .color-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.2);
+        }
+
+        .color-dot.c1 { background-color: #758f6f; }
+        .color-dot.c2 { background-color: #756059; }
+        .color-dot.c3 { background-color: #a69e87; }
+        .color-dot.c4 { background-color: #796257; }
+        .color-dot.c5 { background-color: #a69f7c; }
+        .color-dot.c6 { background-color: #745f57; }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #756059, #758f6f);
+            border: 3px solid #745f57;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                inset 3px 3px 8px rgba(0,0,0,0.3),
+                inset -3px -3px 8px rgba(255,255,255,0.1);
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #a69e87;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+
+        .action-button {
+            background: linear-gradient(145deg, #758f6f, #756059);
+            color: #a69e87;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                6px 6px 12px rgba(0,0,0,0.3),
+                -6px -6px 12px rgba(255,255,255,0.1);
+            border: 2px solid #745f57;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                8px 8px 16px rgba(0,0,0,0.4),
+                -8px -8px 16px rgba(255,255,255,0.2);
+            background: linear-gradient(145deg, #796257, #758f6f);
+        }
+
+        .status-info {
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            border: 1px solid #745f57;
+            text-align: center;
+        }
+
+        .status-text {
+            color: #a69e87;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* Icon styles */
+        .github { height: 40px; width: auto; }
+        .kitty { height: 55px; width: auto; }
+        .telegram { height: 46px; width: auto; }
+        .soundcloud { height: 38px; width: auto; }
+        .steam { height: 35px; width: auto; }
+
+        /* Settings menu styles */
+        .settings-menu {
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .settings-menu.active {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-greeting {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .control-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 0 -8px;
+            padding-left: 8px;
+        }
+
+        .control-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .weather-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .weather-icon {
+            font-size: 32px;
+        }
+
+        .weather-temp {
+            flex: 1;
+        }
+
+        .weather-main {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .weather-sub {
+            font-size: 12px;
+            color: #a0aec0;
+        }
+
+        .weather-status {
+            text-align: right;
+        }
+
+        .weather-condition {
+            font-size: 14px;
+            color: #e2e8f0;
+            margin-bottom: 2px;
+        }
+
+        .weather-location {
+            font-size: 11px;
+            color: #a0aec0;
+        }
+
+        /* Terminal styles */
+        .terminal {
+            position: absolute;
+            bottom: 100px;
+            right: 80px;
+            width: 400px;
+            height: 200px;
+            background: rgba(112, 172, 240, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            color: #ffffff;
+            font-size: 0.8rem;
+            display: none;
+            border: 1px solid #88d3ff;
+        }
+
+        .terminal.active {
+            display: block;
+            animation: slideUp 0.5s ease;
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #ffffff;
+            border-bottom: 1px solid #88d3ff;
+            padding-bottom: 5px;
+        }
+
+        .terminal-content {
+            line-height: 1.4;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float-particle 8s linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10px) rotate(360deg);
+                opacity: 0;
+            }
+        }
