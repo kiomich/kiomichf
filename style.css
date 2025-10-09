@@ -1,0 +1,107 @@
+/* Removed unused background/image/button styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1e1e1e;
+            color: #39a168;
+            font-family: 'Courier New', monospace;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .terminal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+        }
+
+        .terminal-header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #555;
+            display: flex;
+            align-items: center;
+        }
+
+        
+
+
+        .terminal-title {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        #terminal-output {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .output {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        /* Preserve ASCII art spacing and allow horizontal scroll if needed */
+        pre.ascii {
+            white-space: pre;
+            color: #DCC9A9;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+        }
+
+        .input-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .prompt {
+            color: #39a168;
+            margin-right: 8px;
+        }
+
+        .user {
+            color: #3a7b8d;
+        }
+
+        .host {
+            color: #9d208e;
+        }
+
+        .path {
+            color: #ff00ff;
+        }
+
+        .command-input {
+            background: transparent;
+            border: none;
+            color: #DCC9A9;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            outline: none;
+            flex: 1;
+        }
+
+        .cursor {
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .error {
+            color: #B83A2D;
+        }
+
+        
