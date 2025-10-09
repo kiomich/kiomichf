@@ -60,7 +60,7 @@
 
             handlePcCommand(args) {
                 this.addOutput('Opening desktop version...');
-                window.location.href = 'load1/loadOS.html';
+                window.location.href = 'https://kiomich.github.io/loadpc/ ';
             }
 
             handleKiomifetchCommand(args) {
